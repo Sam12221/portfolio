@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+header {
+  background: #222;
+  padding: 1rem;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  color: #fff;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+.intro, .projects, .contact, .about, .skills {
+  padding: 2rem;
+  text-align: center;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #0077ff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.project-card {
+  background: white;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+form input, form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+form button {
+  padding: 10px;
+  background: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
