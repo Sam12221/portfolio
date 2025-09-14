@@ -1,66 +1,191 @@
-body {
-  font-family: Arial, sans-serif;
+/* Import a modern font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
   margin: 0;
-  background: #f9f9f9;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #252542);
+  color: #f0f0f0;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Navbar */
 header {
-  background: #222;
-  padding: 1rem;
+  background: rgba(30, 30, 50, 0.9);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
 }
+
 header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 header h1 {
-  color: #fff;
+  color: #61dafb;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
+
 nav ul {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 20px;
 }
+
 nav a {
-  color: white;
+  color: #f0f0f0;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
-.intro, .projects, .contact, .about, .skills {
-  padding: 2rem;
+
+nav a:hover {
+  color: #61dafb;
+}
+
+/* Intro Section */
+.intro {
   text-align: center;
+  padding: 4rem 2rem;
 }
+
+.intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #61dafb, #a77ff0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
 .btn {
   display: inline-block;
-  padding: 10px 20px;
-  background: #0077ff;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #61dafb, #a77ff0);
   color: white;
-  border-radius: 5px;
+  border-radius: 30px;
   text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(97, 218, 251, 0.3);
+  transition: all 0.3s ease;
 }
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(97, 218, 251, 0.5);
+}
+
+/* About & Skills Sections */
+.about, .skills, .contact, .projects {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.about p, .skills ul {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1rem;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  background: rgba(255, 255, 255, 0.05);
+  margin: 10px auto;
+  padding: 12px 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  transition: transform 0.2s;
+}
+
+.skills li:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Project Cards */
 .project-card {
-  background: white;
-  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
   margin: 1rem auto;
-  max-width: 400px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
+
+.project-card h3 {
+  color: #61dafb;
+  margin-bottom: 1rem;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Contact Form */
 form {
-  max-width: 400px;
+  max-width: 500px;
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
+
 form input, form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f0f0f0;
 }
+
+form input::placeholder, form textarea::placeholder {
+  color: #ccc;
+}
+
 form button {
-  padding: 10px;
-  background: #0077ff;
+  padding: 12px;
+  background: linear-gradient(45deg, #61dafb, #a77ff0);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(97, 218, 251, 0.4);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(30, 30, 50, 0.9);
+  margin-top: 3rem;
 }
