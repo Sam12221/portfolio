@@ -1,4 +1,4 @@
-/* Import a modern font */
+/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 * {
@@ -58,6 +58,7 @@ nav a:hover {
 .intro {
   text-align: center;
   padding: 4rem 2rem;
+  animation: fadeInUp 1s ease forwards;
 }
 
 .intro h2 {
@@ -87,14 +88,15 @@ nav a:hover {
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(97, 218, 251, 0.5);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(97, 218, 251, 0.6);
 }
 
 /* About & Skills Sections */
-.about, .skills, .contact, .projects {
+.about, .skills, .projects, .contact {
   padding: 3rem 2rem;
   text-align: center;
+  animation: fadeInUp 1s ease forwards;
 }
 
 .about p, .skills ul {
@@ -114,7 +116,7 @@ nav a:hover {
   padding: 12px 20px;
   border-radius: 10px;
   max-width: 400px;
-  transition: transform 0.2s;
+  transition: transform 0.2s, background 0.3s;
 }
 
 .skills li:hover {
@@ -130,7 +132,8 @@ nav a:hover {
   max-width: 600px;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, background 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .project-card h3 {
@@ -138,21 +141,53 @@ nav a:hover {
   margin-bottom: 1rem;
 }
 
+.project-card:nth-child(1) { animation-delay: 0.2s; }
+.project-card:nth-child(2) { animation-delay: 0.4s; }
+.project-card:nth-child(3) { animation-delay: 0.6s; }
+.project-card:nth-child(4) { animation-delay: 0.8s; }
+
 .project-card:hover {
   transform: translateY(-8px);
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Contact Form */
-form {
-  max-width: 500px;
-  margin: auto;
+/* Contact Section */
+.contact {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 2rem;
 }
 
-form input, form textarea {
+.contact h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #61dafb;
+}
+
+.contact form {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.contact label {
+  margin: 8px 0 5px;
+  display: block;
+  font-weight: 500;
+  color: #ddd;
+}
+
+.contact input, 
+.contact textarea {
+  width: 100%;
   padding: 12px;
   border: none;
   border-radius: 8px;
@@ -160,13 +195,15 @@ form input, form textarea {
   font-size: 1rem;
   background: rgba(255, 255, 255, 0.1);
   color: #f0f0f0;
+  margin-bottom: 15px;
 }
 
-form input::placeholder, form textarea::placeholder {
-  color: #ccc;
+.contact input::placeholder, 
+.contact textarea::placeholder {
+  color: #aaa;
 }
 
-form button {
+.contact button {
   padding: 12px;
   background: linear-gradient(45deg, #61dafb, #a77ff0);
   color: white;
@@ -177,9 +214,16 @@ form button {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-form button:hover {
+.contact button:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgba(97, 218, 251, 0.4);
+}
+
+#status {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #61dafb;
+  text-align: center;
 }
 
 /* Footer */
@@ -188,4 +232,21 @@ footer {
   padding: 1.5rem;
   background: rgba(30, 30, 50, 0.9);
   margin-top: 3rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
