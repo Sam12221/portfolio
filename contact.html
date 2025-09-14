@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Saurav Keshari</title>
   <link rel="stylesheet" href="style.css">
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      // Initialize EmailJS with your Public Key
+      emailjs.init("rYq-BxKMo3hbcDHEE");
+    })();
+  </script>
 </head>
 <body>
   <header>
@@ -20,17 +28,33 @@
 
   <section class="contact">
     <h2>Get in Touch</h2>
-    <form action="https://formspree.io/f/mnqekldj" method="POST">
+    <form id="contact-form">
       <label>Name:</label>
-      <input type="text" name="name" required>
+      <input type="text" name="from_name" required>
+      
       <label>Email:</label>
-      <input type="email" name="_replyto" required>
+      <input type="email" name="reply_to" required>
+      
       <label>Message:</label>
       <textarea name="message" required></textarea>
+      
       <button type="submit">Send Message</button>
     </form>
-    <p>Email me directly: <a href="mailto:sauravkeshari04@gmail.com">sauravkeshari04@gmail.com</a></p>
+    <p id="status"></p>
   </section>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      emailjs.sendForm("service_89lxvfm", "template_upx6qdh", this)
+        .then(() => {
+          document.getElementById("status").innerText = "✅ Message sent successfully!";
+        }, (err) => {
+          document.getElementById("status").innerText = "❌ Failed to send. Please try again.";
+          console.error("EmailJS Error:", err);
+        });
+    });
+  </script>
 
   <footer>
     <p>© 2025 Saurav Keshari</p>
