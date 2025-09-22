@@ -49,9 +49,9 @@
       emailjs.sendForm("service_89lxvfm", "template_upx6qdh", this)
         .then(() => {
           document.getElementById("status").innerText = "✅ Message sent successfully!";
-          document.getElementById("from_name").value = "";
-          document.getElementById("reply_to").value = "";
-          document.getElementById("message").value = "";
+          document.getElementsByName("from_name").value = "";
+          document.getElementsByName("reply_to").value = "";
+          document.getElementsByName("message").value = "";
         }, (err) => {
           document.getElementById("status").innerText = "❌ Failed to send. Please try again.";
           console.error("EmailJS Error:", err);
