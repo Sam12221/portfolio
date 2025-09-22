@@ -46,15 +46,12 @@
   <script>
     document.getElementById("contact-form").addEventListener("submit", function(event) {
       event.preventDefault();
-      const name = document.getElementById("name");
-      const email = document.getElementById("email");
-      const message = document.getElementById("message");
       emailjs.sendForm("service_89lxvfm", "template_upx6qdh", this)
         .then(() => {
           document.getElementById("status").innerText = "✅ Message sent successfully!";
-          name.value = "";
-          email.value = "";
-          message.value = "";
+          document.getElementById("from_name").value = "";
+          document.getElementById("reply_to").value = "";
+          document.getElementById("message").value = "";
         }, (err) => {
           document.getElementById("status").innerText = "❌ Failed to send. Please try again.";
           console.error("EmailJS Error:", err);
